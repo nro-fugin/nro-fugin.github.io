@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*#########################################################
+
+各種ファイル読み込み
+
+#########################################################*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+@import url("//fonts.googleapis.com/css?family=Marcellus");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers 
+*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-family: 'ヒラギノ角ゴ ProN W6', 'Hiragino Kaku Gothic Pro', HiraKakuPro-W6, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+  font-size: 62.5%; }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: normal;
+  src: local("NotoSansJP-Regular.otf"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("_assets/font/fontawesome/fontawesome-webfont.eot?v=4.3.0");
+  src: url("_assets/font/fontawesome/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("_assets/font/fontawesome/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("_assets/font/fontawesome/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("_assets/font/fontawesome/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("_assets/font/fontawesome/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.0rem; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  word-wrap: break-word;
+  font-family: "Marcellus", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  letter-spacing: .15rem; }
+
+.wrapper {
+  padding: 62px 0 0; }
+
+header {
+  background: #FFF;
+  padding: 0 20px;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header .site_id {
+    padding: 20px 20px 20px 0; }
+    header .site_id a {
+      max-width: 100px;
+      display: block; }
+      header .site_id a img {
+        width: 100%; }
+  header .g_nav ul {
+    margin: 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    header .g_nav ul li {
+      font-size: 2rem; }
+      header .g_nav ul li::after {
+        content: "/";
+        padding: 0 1rem; }
+      header .g_nav ul li:last-child::after {
+        content: none; }
+      header .g_nav ul li a:link, header .g_nav ul li a:visited {
+        text-decoration: none;
+        color: #333;
+        line-height: 1rem;
+        transition: opacity 300ms 0s ease; }
+      header .g_nav ul li a:hover {
+        opacity: .5;
+        margin: -2px 0 0;
+        border-bottom: 2px #999 solid; }
+
+.main_visual {
+  width: 100%;
+  min-width: 980px;
+  position: relative;
+  z-index: 10; }
+  .main_visual img {
+    width: 100%; }
+
+main {
+  transform: skew(0deg, -5deg);
+  background: url(../img/common/bg.png);
+  min-width: 980px;
+  padding-top: 100px;
+  margin-top: -100px;
+  margin-bottom: -100px; }
+  main .in_main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-size: 2rem;
+    line-height: 1.75;
+    letter-spacing: .1rem;
+    transform: skew(0deg, 5deg); }
+
+footer {
+  background: #1c1c1c;
+  min-width: 980px;
+  padding-top: 80px; }
+  footer .in_foot {
+    text-align: center; }
+    footer .in_foot figure {
+      text-align: right;
+      padding: 20px; }
+      footer .in_foot figure img {
+        width: 104px; }
+    footer .in_foot nav {
+      padding: 40px 20px 50px; }
+      footer .in_foot nav dl dt {
+        color: #FFF;
+        font-size: 1.6rem; }
+        footer .in_foot nav dl dt span {
+          display: block;
+          padding-bottom: 5px; }
+      footer .in_foot nav dl dd {
+        padding-top: 20px; }
+        footer .in_foot nav dl dd ul {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          footer .in_foot nav dl dd ul li a:link, footer .in_foot nav dl dd ul li a:visited {
+            font-size: 1.4rem;
+            color: #989898;
+            text-decoration: none;
+            transition: opacity 300ms 0s ease; }
+          footer .in_foot nav dl dd ul li a:hover {
+            opacity: .5;
+            margin: -2px 0 0;
+            border-bottom: 2px #999 solid; }
+          footer .in_foot nav dl dd ul li::after {
+            content: "/";
+            color: #989898;
+            padding: 0 1rem;
+            font-size: 1.4rem; }
+          footer .in_foot nav dl dd ul li:last-child::after {
+            content: none; }
+    footer .in_foot .copy {
+      background: #2C2D34;
+      color: #FFF;
+      padding: 20px;
+      font-size: 1.2rem; }
+
+.parent__box {
+  padding-top: 100px;
+  max-width: 980px;
+  margin: 0 auto; }
+  .parent__box .title__box {
+    margin: 0; }
+    .parent__box .title__box h3 {
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 2px solid #2C2D34; }
+  .parent__box:first-child {
+    padding-top: 0; }
+  .parent__box .content__box {
+    margin-top: 50px; }
+    .parent__box .content__box ul {
+      list-style: disc inside; }
+      .parent__box .content__box ul li {
+        padding-left: 2rem; }
+        .parent__box .content__box ul li p {
+          margin: 1rem;
+          text-align: center;
+          background: #ccc;
+          color: #000; }
+          .parent__box .content__box ul li p:first-child {
+            margin-top: 0; }
+    .parent__box .content__box p {
+      margin-top: 2rem; }
+      .parent__box .content__box p:first-child {
+        margin-top: -4rem; }
+    .parent__box .content__box figure {
+      width: 100%;
+      margin: 20px 0;
+      background: #FFF;
+      padding: 20px;
+      text-align: center; }
+      .parent__box .content__box figure img {
+        max-width: 100%; }
+    .parent__box .content__box .table__parent {
+      background: #EEE;
+      padding: 10px; }
+      .parent__box .content__box .table__parent table {
+        table-layout: fixed;
+        width: 100%; }
+        .parent__box .content__box .table__parent table caption {
+          text-align: left;
+          margin: 0 0 20px; }
+        .parent__box .content__box .table__parent table th {
+          background: #2C2D34;
+          border-right: 1px solid #FFF; }
+          .parent__box .content__box .table__parent table th span {
+            display: block;
+            margin: 10px;
+            color: #FFF; }
+          .parent__box .content__box .table__parent table th:last-child {
+            border-right-color: #2C2D34; }
+        .parent__box .content__box .table__parent table td {
+          text-align: center;
+          border: 1px dashed #2C2D34; }
+          .parent__box .content__box .table__parent table td span {
+            display: block;
+            padding: 10px;
+            font-size: 1.4rem; }
+
+.txt_attention li {
+  font-size: 1.4rem;
+  text-indent: -1.5rem;
+  margin-top: 5px;
+  padding-left: 1.5rem; }
+  .txt_attention li::before {
+    content: "※"; }
+
+sup {
+  font-size: 1.2rem;
+  vertical-align: top;
+  margin: 0 5px; }
+  sup.bottom {
+    vertical-align: sub;
+    margin-left: 0px;
+    margin-right: -5px; }
+
+/*#########################################################
+
+各種ページファイル読み込み
+
+#########################################################*/
+.lower.project header .g_nav ul li.nav__project a {
+  opacity: .5;
+  margin: -2px 0 0;
+  border-bottom: 2px #999 solid; }
+
+.lower.member header .g_nav ul li.nav__member a {
+  opacity: .5;
+  margin: -2px 0 0;
+  border-bottom: 2px #999 solid; }
+
+.lower.result header .g_nav ul li.nav__result a {
+  opacity: .5;
+  margin: -2px 0 0;
+  border-bottom: 2px #999 solid; }
+
+.lower .main_visual {
+  background: #2C2D34;
+  width: 100%;
+  height: 200px;
+  position: relative; }
+  .lower .main_visual h2 {
+    font-size: 2rem;
+    color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.lower main .in_main {
+  padding: 50px 20px; }

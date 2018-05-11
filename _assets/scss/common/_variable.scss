@@ -1,0 +1,72 @@
+$breakpoint: 768px;
+$sp_content_w: 100%;
+$contents_width: 980px;
+
+html {
+	font-family: 'ヒラギノ角ゴ ProN W6', 'Hiragino Kaku Gothic Pro', HiraKakuPro-W6, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+
+}
+
+@mixin content_w() {
+	max-width: $contents_width;
+	margin: 0 auto;
+}
+
+%title {
+	margin: 0;
+	padding: 0 0 0;
+}
+
+@mixin column($a:space-between, $b:flex-start) {
+	display: flex;
+	justify-content: $a;
+	align-items: $b;
+}
+
+@mixin linx ($link, $visit, $hover ,$headnav_bgcolor) {
+	a {
+		color: $link;
+		text-decoration: none;
+		&:visited {
+			color: $visit;
+		}
+		&:hover {
+			color: $hover;
+			background: $headnav_bgcolor;
+		}
+	}
+}
+
+
+@mixin g_navlink() {
+	opacity: .5;
+	margin: -2px 0 0;
+	border-bottom: 2px #999 solid;
+}
+
+// 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
+@function get_vw($size, $viewport:320){
+	$rate: 100 / $viewport;
+	@return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+	font-size: get_vw($font_size);
+	@media screen and (min-width: $breakpoint + 1) {
+		font-size: $font_size * 0.1rem;
+	}
+}
+
+@mixin imgsize () {
+	$imgw: 100%;
+	height: $imgw * 0.713;
+}
+
+@mixin imgsize02 () {
+	$imgw: 100%;
+	height: $imgw * 0.41;
+}

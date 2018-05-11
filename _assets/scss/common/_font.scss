@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: normal;
+	src: local('NotoSansJP-Regular.otf'),
+		url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
+		url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
+		url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Japanese';
+	font-style: normal;
+	font-weight: 900;
+	src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'),
+		url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
+		url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('_assets/font/fontawesome/fontawesome-webfont.eot?v=4.3.0');
+	src: url('_assets/font/fontawesome/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('_assets/font/fontawesome/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('_assets/font/fontawesome/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('_assets/font/fontawesome/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('_assets/font/fontawesome/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Marcellus
+@import url('//fonts.googleapis.com/css?family=Marcellus');
+
+// Domine
+// @import url('https://fonts.googleapis.com/css?family=Domine:400,700');
+
+// PT Serif
+// @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+// font-family: 'Domine', serif;

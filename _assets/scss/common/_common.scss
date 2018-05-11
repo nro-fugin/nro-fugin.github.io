@@ -1,0 +1,307 @@
+@charset "utf-8";
+
+// fontサイズ設定
+html { font-size: 62.5%; }
+body { font-size: 1.0rem; }
+
+* {
+	box-sizing: border-box;
+}
+
+body { 
+	word-wrap: break-word;// テキストが折り返さないよう
+	font-family: "Marcellus", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	letter-spacing: .15rem;
+}
+
+.wrapper {
+	padding: 62px 0 0;
+}
+
+header {
+	background: #FFF;
+	padding: 0 20px;
+	width: 100%;
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	@include column(space-between, center);
+	.site_id {
+		padding: 20px 20px 20px 0;
+		a {
+			max-width: 100px;
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.g_nav {
+		ul {
+			margin: 6px 0 0;
+			@include column();
+			li {
+				font-size: 2rem;
+				&::after {
+					content: "/";
+					padding: 0 1rem;
+				}
+				&:last-child {
+					&::after  {
+						content: none;
+					}	
+				}
+				a {
+					&:link ,
+					&:visited {
+						text-decoration: none;
+						color: #333;
+						line-height: 1rem;
+						transition: opacity 300ms 0s ease;
+					}
+					&:hover {
+						opacity: .5;
+						margin: -2px 0 0;
+						border-bottom: 2px #999 solid;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main_visual {
+	width: 100%;
+	min-width: $contents_width;
+	position: relative;
+	z-index: 10;
+	img {
+		width: 100%;
+	}
+}
+
+main {
+	transform: skew(0deg, -5deg);
+	background: url(../img/common/bg.png);
+	min-width: $contents_width;
+	padding: {
+		top: 100px;
+	}
+	margin: {
+		top: -100px;
+		bottom: -100px;
+	}
+	.in_main {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 50px 20px;
+		font-size: 2rem;
+		line-height: 1.75;
+		letter-spacing: .1rem;
+		transform: skew(0deg, 5deg);
+	}
+}
+
+footer {
+	background: #1c1c1c;
+	min-width: $contents_width;
+	padding: {
+		top: 80px;
+	}
+	.in_foot {
+		text-align: center;
+		figure {
+			text-align: right;
+			padding: 20px;
+			img {
+				width: 104px;
+			}
+		}
+		nav {
+			padding: 40px 20px 50px;
+			dl {
+				dt {
+					color: #FFF;
+					font-size: 1.6rem;
+					span {
+						display: block;
+						padding: {
+							bottom: 5px;
+						}
+					}
+				}
+				dd {
+					padding: {
+						top: 20px;
+					}
+					ul {
+						@include column(center, center);
+						li {
+							a {
+								&:link ,
+								&:visited {
+									font-size: 1.4rem;
+									color: #989898;
+									text-decoration: none;
+									transition: opacity 300ms 0s ease;
+								}
+								&:hover {
+									opacity: .5;
+									margin: -2px 0 0;
+									border-bottom: 2px #999 solid;
+								}
+							}
+							&::after {
+								content: "/";
+								color: #989898;
+								padding: 0 1rem;
+								font-size: 1.4rem;
+							}
+							&:last-child {
+								&::after  {
+									content: none;
+								}	
+							}
+						}
+					}
+				}
+			}
+		}
+		.copy {
+			background: #2C2D34;
+			color: #FFF;
+			padding: 20px;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+// パーツ
+.parent__box {
+	padding: {
+		top: 100px;
+	}
+	@include content_w;
+	.title__box {
+		margin: 0;
+		h3 {
+			margin: 0 auto;
+			text-align: center;
+			border-bottom: 2px solid #2C2D34;
+		}
+	}
+	&:first-child {
+		padding: {
+			top: 0;
+		}
+	}
+	.content__box {
+		margin: {
+			top: 50px;
+		}
+		ul {
+			list-style: disc inside;
+			li {
+				padding: {
+					left: 2rem;
+				}
+				p {
+					margin: 1rem;
+					text-align: center;
+					background: #ccc;
+					color: #000;
+					&:first-child {
+						margin: {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+		p {
+			margin: {
+				top: 2rem;
+			}
+			&:first-child {
+				margin: {
+					top: -4rem;
+				}
+			}
+		}
+		figure {
+			width: 100%;
+			margin: 20px 0;
+			background: #FFF;
+			padding: 20px;
+			text-align: center;
+			img {
+				max-width: 100%;
+			}
+			figcaption {
+				
+			}
+		}
+		.table__parent {
+			background: #EEE;
+			padding: 10px;
+			table {
+				table-layout: fixed;
+				width: 100%;
+				caption {
+					text-align: left;
+					margin: 0 0 20px;
+				}
+				th {
+					background: #2C2D34;
+					border-right: 1px solid #FFF;
+					span {
+						display: block;
+						margin: 10px;
+						color: #FFF;
+					}
+					&:last-child {
+						border-right-color: #2C2D34;
+					}
+				}
+				td {
+					text-align: center;
+					border: 1px dashed #2C2D34;
+					span {
+						display: block;
+						padding: 10px;
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.txt_attention {
+	li {
+		font-size: 1.4rem;
+		text-indent: -1.5rem;
+		margin: {
+			top: 5px;
+		}
+		padding: {
+			left: 1.5rem;
+		}
+		&::before {
+			content: "※";
+		}
+	}
+}
+
+sup {
+	font-size: 1.2rem;
+	vertical-align: top;
+	margin: 0 5px;
+	&.bottom {
+		vertical-align: sub;
+		margin: {
+			left: 0px;
+			right: -5px;
+		};
+	}
+}
